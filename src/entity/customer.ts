@@ -21,14 +21,23 @@ export class Customer {
         }
 
     }
+    get name(): string {
+        return this._name;
+    }
 
+    isActive(): boolean {
+        return this._active;
+    }
     changeName(name: string) {
         this._name = name;
         this.validate();
     }
 
+    deactivate(){
+        this._active = false;
+    }
     activate() {
-        if (this._address !== undefined) {
+        if (this._address === undefined) {
             throw new Error('Address is required');
         }
         this._active = true;
