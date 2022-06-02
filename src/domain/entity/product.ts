@@ -38,5 +38,7 @@ export class Product {
     get name(): string {
         return this._name;
     }
-
+    get id(): string {
+        return this._id;
+    }
 }
