@@ -1,4 +1,5 @@
-import { OrderItem } from "./order-item";
+import OrderItem from "./order-item";
+
 
 export class Order {
     private _id: string;
@@ -18,6 +19,18 @@ export class Order {
         return this._items.reduce((acc, item) => acc + item.price, 0);
     }
 
+    get id(): string {
+        return this._id;
+    }
+
+    get customerId(): string {
+        return this._customerId;
+    }
+
+    get items(): OrderItem[] {
+        return this._items;
+    }
+
     validate(): void {
         if (this._id.length === 0) {
             throw new Error('Id is required');
@@ -28,7 +41,7 @@ export class Order {
         if (this._items.length === 0) {
             throw new Error('Item quantity must be greater than 0');
         }
-        if(this._items.some(item => item.quantity <= 0)) {
+        if (this._items.some(item => item.quantity <= 0)) {
             throw new Error('Item quantity must be greater than 0');
         }
     }
