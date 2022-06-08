@@ -1,34 +1,48 @@
 export class Address {
-    _sreet : string;
-    _number : number;
-    _zipcode : string;
-    _city : string;
+    _street: string;
+    _number: number;
+    _zipcode: string;
+    _city: string;
 
-    constructor (_sreet : string , number : number , zipcode : string , city : string) {
-        this._sreet = _sreet;
+    constructor(street: string, number: number, zipcode: string, city: string) {
+        this._street = street;
         this._number = number;
         this._zipcode = zipcode;
         this._city = city;
-        this.validate ();
+        this.validate();
     }
 
-    validate () {
-        if ( this._city.length === 0 ) {
-            throw new Error ( "City is empty" );
+    validate() {
+        if (this._city.length === 0) {
+            throw new Error("City is empty");
         }
-        if ( this._zipcode.length === 0 ) {
-            throw new Error ( "Zipcode is empty" );
+        if (this._zipcode.length === 0) {
+            throw new Error("Zipcode is empty");
         }
-        if ( this._number < 0 ) {
-            throw new Error ( "Number is negative" );
+        if (this._number < 0) {
+            throw new Error("Number is negative");
         }
-        if ( this._sreet.length === 0 ) {
-            throw new Error ( "Street is empty" );
+        if (this._street.length === 0) {
+            throw new Error("Street is empty");
         }
     }
 
-    toString () : string {
-        return `${this._sreet} ${this._number} ${this._zipcode} ${this._city}`;
+    get street(): string {
+        return this._street;
+    }
+
+    get number(): number {
+        return this._number;
+    }
+    get zipcode(): string {
+        return this._zipcode;
+    }
+    get city(): string {
+        return this._city;
+    }
+
+    toString(): string {
+        return `${this._street} ${this._number} ${this._zipcode} ${this._city}`;
     }
 
 }

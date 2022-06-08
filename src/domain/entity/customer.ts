@@ -30,7 +30,7 @@ export class Customer {
     get id(): string {
         return this._id
     }
-    
+
     get name(): string {
         return this._name;
     }
@@ -44,6 +44,10 @@ export class Customer {
         this.validate();
     }
 
+    changeAddress(address: Address) {
+        this._address = address;
+    }
+
     deactivate() {
         this._active = false;
     }
@@ -54,7 +58,7 @@ export class Customer {
         this._active = true;
     }
 
-    addReardPoints(points: number): void {
+    addRewardPoints(points: number): void {
         this._rewardPoints += points;
     }
 
