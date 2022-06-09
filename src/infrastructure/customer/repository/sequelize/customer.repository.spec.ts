@@ -1,9 +1,8 @@
 import { Sequelize } from "sequelize-typescript";
-import { Address } from "../../../domain/customer/value-object/address";
-import { Customer } from "../../../domain/customer/entity/customer";
-import { CustomerModel } from "../../db/sequelize/model/customer-model";
-import { CustomerRepository } from "../customer-repository";
-
+import Customer from "../../../../domain/customer/entity/customer";
+import Address from "../../../../domain/customer/value-object/address";
+import CustomerModel from "./customer.model";
+import CustomerRepository from "./customer.repository";
 
 describe("Customer repository test", () => {
   let sequelize: Sequelize;
@@ -38,10 +37,10 @@ describe("Customer repository test", () => {
       name: customer.name,
       active: customer.isActive(),
       rewardPoints: customer.rewardPoints,
-      street: customer.Address.street,
-      number: customer.Address.number,
-      zipcode: customer.Address.zipcode,
-      city: customer.Address.city,
+      street: address.street,
+      number: address.number,
+      zipcode: address.zip,
+      city: address.city,
     });
   });
 
@@ -63,7 +62,7 @@ describe("Customer repository test", () => {
       rewardPoints: customer.rewardPoints,
       street: address.street,
       number: address.number,
-      zipcode: address.zipcode,
+      zipcode: address.zip,
       city: address.city,
     });
   });
