@@ -31,6 +31,10 @@ export class Customer {
         return this._id
     }
 
+    get Address(): Address {
+        return this._address;
+    }
+    
     get name(): string {
         return this._name;
     }

@@ -38,10 +38,10 @@ describe("Customer repository test", () => {
       name: customer.name,
       active: customer.isActive(),
       rewardPoints: customer.rewardPoints,
-      street: address.street,
-      number: address.number,
-      zipcode: address.zipcode,
-      city: address.city,
+      street: customer.Address.street,
+      number: customer.Address.number,
+      zipcode: customer.Address.zipcode,
+      city: customer.Address.city,
     });
   });
 
