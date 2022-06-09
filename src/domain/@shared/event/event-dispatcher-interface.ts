@@ -1,4 +1,4 @@
-import { EventInterface } from "../event-interface";
+import { EventInterface } from "./event-interface";
 import { EventHandlerInterface } from "./event-handler-interface";
 
 export interface EventDispatcherInterface {

@@ -1,5 +1,6 @@
-import { Address } from '../address';
-import { Customer } from '../customer'
+
+import { Customer } from '../../customer/entity/customer'
+import { Address } from '../value-object/address';
 
 describe('Customer unit tests', () => {
     it("should throw error when id is empty", () => {
