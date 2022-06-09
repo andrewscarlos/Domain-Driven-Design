@@ -19,8 +19,15 @@ export class EventDispatcher implements EventDispatcherInterface {
         this.eventHandlers[eventName].push(eventHandler);
      };
 
-    unregister(eventName: string, eventHandler: EventHandlerInterface<EventInterface>): void {};
+    unregister(eventName: string, eventHandler: EventHandlerInterface<EventInterface>): void {
+        if(!this.eventHandlers[eventName]) {
+            return;
+        }
+        this.eventHandlers[eventName] = this.eventHandlers[eventName].filter(eh => eh !== eventHandler);
+    };
 
-    unregisterAll(): void {};
+    unregisterAll(): void {
+        this.eventHandlers = {};
+    };
 
 }
