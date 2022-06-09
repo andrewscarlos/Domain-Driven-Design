@@ -2,9 +2,9 @@ import { EventInterface } from "../../event-interface";
 
 export class ProductCreatedEvent implements EventInterface {
     dataTimeOccured: Date;
-    eventData: string;
+    eventData: any;
 
-    constructor(eventName: string) {
+    constructor(eventName: any) {
         this.eventData = eventName;
         this.dataTimeOccured = new Date();
     }

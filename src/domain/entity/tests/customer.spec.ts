@@ -47,10 +47,10 @@ describe('Customer unit tests', () => {
         const customer = new Customer('123', "Customer 123");
         expect(customer.rewardPoints).toBe(0)
 
-        customer.addReardPoints(100)
+        customer.addRewardPoints(100)
         expect(customer.rewardPoints).toBe(100)
 
-        customer.addReardPoints(10)
+        customer.addRewardPoints(10)
         expect(customer.rewardPoints).toBe(110)
     })
 })
